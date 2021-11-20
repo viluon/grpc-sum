@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+
+package me.viluon.sum;
+
+// the sum service accepts a stream of integers and returns their sum
+service SumService {
+  rpc Sum(SumRequest) returns (SumResponse) {}
+}
+
+message SumRequest {
+  repeated int64 numbers = 1;
+}
+
+message SumResponse {
+  int64 sum = 1;
+}
